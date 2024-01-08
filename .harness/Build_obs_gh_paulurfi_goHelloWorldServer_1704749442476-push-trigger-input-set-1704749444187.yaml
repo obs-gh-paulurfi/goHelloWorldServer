@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_obs_gh_paulurfi_goHelloWorldServer_1704749442476-push-trigger-input-set
+  identifier: Build_obs_gh_paulurfi_goHelloWorldServer_1704749442476pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: PMU_Harness_Go_Lab
+  pipeline:
+    identifier: Build_obs_gh_paulurfi_goHelloWorldServer_1704749442476
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
