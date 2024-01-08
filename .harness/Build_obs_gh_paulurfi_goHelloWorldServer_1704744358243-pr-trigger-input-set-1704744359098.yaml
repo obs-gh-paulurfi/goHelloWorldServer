@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_obs_gh_paulurfi_goHelloWorldServer_1704744358243-pr-trigger-input-set
+  identifier: Build_obs_gh_paulurfi_goHelloWorldServer_1704744358243prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_obs_gh_paulurfi_goHelloWorldServer_1704744358243
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
