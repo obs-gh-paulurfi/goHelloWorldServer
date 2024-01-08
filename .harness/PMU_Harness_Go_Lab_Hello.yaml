@@ -1,0 +1,42 @@
+pipeline:
+  name: PMU Harness Go Lab Hello
+  identifier: PMU_Harness_Go_Lab_Hello
+  projectIdentifier: PMU_Harness_Go_Lab
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.Github
+        repoName: https://github.com/obs-gh-paulurfi/goHelloWorldServer
+        build: <+input>
+  stages:
+    - stage:
+        name: build push
+        identifier: PMU_Harness_Go_Lab_Hello
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: false
+            paths: []
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: PMU_Harness_Go_Lab
+              namespace: harness-lab-go
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: us.gcr.io/playground/quickstart-image
+                    shell: Sh
+                    command: echo "Hi there!"
