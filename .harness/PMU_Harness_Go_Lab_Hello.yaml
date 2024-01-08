@@ -37,6 +37,6 @@ pipeline:
                   identifier: Run_1
                   spec:
                     connectorRef: account.harnessImage
-                    image: us.gcr.io/playground/quickstart-image
+                    image: gcr.io/k8s-minikube/kicbase:v0.0.42
                     shell: Sh
                     command: echo "Hi there!"
